@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS ginna_beauty_inventory;
-USE ginna_beauty_inventory;
-
 -- Table: users
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -15,14 +15,14 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Database Configuration
-define('DB_HOST', '127.0.0.1');
-define('DB_PORT', '3306');
-define('DB_NAME', 'ginna_beauty_inventory');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', getenv('RDS_HOSTNAME') ?: '127.0.0.1');
+define('DB_PORT', getenv('RDS_PORT') ?: '3306');
+define('DB_NAME', getenv('RDS_DB_NAME') ?: 'ginna_beauty_inventory');
+define('DB_USER', getenv('RDS_USERNAME') ?: 'root');
+define('DB_PASS', getenv('RDS_PASSWORD') !== false ? getenv('RDS_PASSWORD') : '');
 
 // Row-level Encryption Key (32-byte string)
-define('ENCRYPTION_KEY', 'GinnaBeautySecretKey2026Base32Chr!');
+define('ENCRYPTION_KEY', getenv('ENCRYPTION_KEY') ?: 'GinnaBeautySecretKey2026Base32Chr!');
 
 // OOP Class Autoloader
 spl_autoload_register(function ($class_name) {
