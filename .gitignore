@@ -1,0 +1,16 @@
+# IDE files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# PHP/Webserver logs
+error_log
+*.log
